@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | We Bare Bears Fan Hub 🐾</title>
+  <meta name="description" content="Get in touch with the We Bare Bears Fan Hub — send a message, ask a question, or share your fan art!" />
+  <meta property="og:title" content="Contact — We Bare Bears Fan Hub" />
+  <meta property="og:description" content="Get in touch with the We Bare Bears Fan Hub — send a message, ask a question, or share your fan art!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="Asset/Frame/ezgif-frame-001.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#ff8c69" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>" />
+  <style>
+    .contact-hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--yellow) 60%, #FFD699 100%);
+      padding: 130px 40px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-hero h1 { font-size: clamp(2.5rem,6vw,4rem); color: var(--brown); margin-bottom: 12px; }
+    .contact-hero p  { font-size: 1.05rem; color: var(--dark); max-width: 520px; margin: 0 auto; line-height: 1.7; }
+
+    /* Info cards beside form */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 50px;
+      max-width: 1100px;
+      margin: 0 auto;
+      align-items: start;
+    }
+    .contact-info { display: flex; flex-direction: column; gap: 20px; }
+    .info-card {
+      background: #fff;
+      border-radius: var(--radius);
+      border: 2.5px solid var(--brown);
+      box-shadow: var(--shadow);
+      padding: 24px 22px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      transition: transform 0.25s;
+    }
+    .info-card:hover { transform: translateY(-4px) rotate(-1deg); }
+    .info-icon { font-size: 2rem; flex-shrink: 0; }
+    .info-card h3 { font-family: 'Bubblegum Sans'; font-size: 1.1rem; color: var(--brown); margin-bottom: 4px; }
+    .info-card p  { font-size: 0.88rem; color: #666; line-height: 1.6; }
+
+    /* Social links */
+    .social-strip {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 18px;
+      border-radius: 30px;
+      border: 2px solid var(--brown);
+      background: var(--yellow);
+      color: var(--brown);
+      font-weight: 700;
+      font-size: 0.85rem;
+      transition: background 0.2s, transform 0.2s;
+      text-decoration: none;
+    }
+    .social-btn:hover {
+      background: var(--accent);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    /* FAQ accordion */
+    .faq-section { background: linear-gradient(135deg, #e8f4f8 0%, var(--bg) 100%); padding: 80px 40px; }
+    .faq-list { max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
+    .faq-item {
+      background: #fff;
+      border-radius: var(--radius);
+      border: 2.5px solid var(--brown);
+      box-shadow: 3px 3px 0 var(--brown);
+      overflow: hidden;
+    }
+    .faq-q {
+      width: 100%;
+      text-align: left;
+      background: none;
+      border: none;
+      padding: 18px 22px;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--brown);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      transition: background 0.2s;
+    }
+    .faq-q:hover { background: var(--yellow); }
+    .faq-q .arrow { font-size: 1.2rem; transition: transform 0.3s; flex-shrink:0; }
+    .faq-item.open .faq-q .arrow { transform: rotate(180deg); }
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(.4,0,.2,1), padding 0.3s;
+      padding: 0 22px;
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.7;
+    }
+    .faq-item.open .faq-a { max-height: 300px; padding: 0 22px 18px; }
+
+    @media (max-width: 860px) {
+      .contact-layout { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Page Loader -->
+<div class="page-loader" id="page-loader" aria-hidden="true">
+  <div class="loader-inner">
+    <div class="loader-paw">🐾</div>
+    <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+    <p class="loader-text">Loading...</p>
+  </div>
+</div>
+
+<div class="bubbles-bg" aria-hidden="true"></div>
+
+<!-- NAVBAR -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">
+    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="40" cy="48" r="24" fill="#8B5E3C"/>
+      <circle cx="22" cy="26" r="11" fill="#8B5E3C"/>
+      <circle cx="58" cy="26" r="11" fill="#8B5E3C"/>
+      <ellipse cx="30" cy="52" rx="6" ry="7" fill="#FFF8F0"/>
+      <ellipse cx="40" cy="56" rx="6" ry="7" fill="#FFF8F0"/>
+      <ellipse cx="50" cy="52" rx="6" ry="7" fill="#FFF8F0"/>
+    </svg>
+    We Bare Bears 🐾
+  </a>
+  <ul class="nav-links" role="list">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="series.html">Cartoon Series</a></li>
+    <li><a href="characters.html">Characters</a></li>
+    <li><a href="shop.html">Shop</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button id="cart-btn" aria-label="Open cart">🛒 Cart <span class="cart-badge">0</span></button>
+    <button id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div id="mobile-nav" role="navigation" aria-label="Mobile navigation">
+  <a href="index.html">🏠 Home</a>
+  <a href="series.html">🎬 Cartoon Series</a>
+  <a href="characters.html">🐻 Characters</a>
+  <a href="shop.html">🛍️ Shop</a>
+  <a href="contact.html">📬 Contact</a>
+</div>
+
+<main>
+<!-- CONTACT HERO -->
+<section class="contact-hero">
+  <img class="watermark-frame" style="width:320px;top:0;left:-60px;transform:rotate(-10deg);" alt="" aria-hidden="true"/>
+  <img class="watermark-frame" style="width:280px;bottom:-10px;right:-50px;transform:rotate(10deg);" alt="" aria-hidden="true"/>
+  <h1>📬 Say Hello!</h1>
+  <p>Got a question, fan art to share, or just want to talk about bears? Grizz, Panda & Ice Bear are listening!</p>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="contact-section" id="contact" style="padding:80px 40px;">
+  <img class="watermark-frame" style="width:380px;top:40px;right:-80px;transform:rotate(8deg);" alt="" aria-hidden="true"/>
+
+  <div class="contact-layout">
+    <!-- Left: info cards -->
+    <div class="contact-info reveal">
+
+      <div class="info-card">
+        <span class="info-icon">🐻</span>
+        <div>
+          <h3>Bear HQ</h3>
+          <p>Cave 42, Berry Hill, San Francisco Bay Area, CA — right next to the best taco truck in town.</p>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <span class="info-icon">📧</span>
+        <div>
+          <h3>Email Us</h3>
+          <p>bearhub@webarebears.fan<br/><em style="font-size:0.82rem;color:#aaa;">We respond within 24 hours (Ice Bear is very efficient).</em></p>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <span class="info-icon">⏰</span>
+        <div>
+          <h3>Support Hours</h3>
+          <p>Mon – Fri: 9am – 6pm PST<br/>Weekends: 10am – 4pm PST<br/>Snack breaks excluded.</p>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <span class="info-icon">🌐</span>
+        <div>
+          <h3>Find Us Online</h3>
+          <div class="social-strip">
+            <a href="#" class="social-btn" id="social-twitter">🐦 Twitter</a>
+            <a href="#" class="social-btn" id="social-instagram">📸 Instagram</a>
+            <a href="#" class="social-btn" id="social-youtube">▶️ YouTube</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Right: contact form -->
+    <div class="contact-inner reveal">
+      <form class="contact-form" id="contact-form" novalidate>
+        <div class="section-header" style="text-align:left;margin-bottom:30px;">
+          <span class="section-tag">Drop a Message</span>
+          <h2 class="section-title" style="font-size:1.9rem;">We'd love to hear from you 🐾</h2>
+        </div>
+
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="e.g. Nom Nom 🐼"
+                 required autocomplete="name"
+                 aria-describedby="name-error"
+                 aria-invalid="false" />
+          <span class="form-error" id="name-error" role="alert">Please enter your name.</span>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="hello@bears.com"
+                 required autocomplete="email"
+                 aria-describedby="email-error"
+                 aria-invalid="false" />
+          <span class="form-error" id="email-error" role="alert">Please enter a valid email address.</span>
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <select id="subject" name="subject">
+            <option value="">— Select a topic —</option>
+            <option value="general">💬 General Enquiry</option>
+            <option value="shop">🛍️ Shop / Order Issue</option>
+            <option value="fanart">🎨 Fan Art Submission</option>
+            <option value="collab">🤝 Collaboration</option>
+            <option value="other">🐻 Other (Bear-related)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message"
+                    placeholder="Tell us anything — favourite episode, favourite snack, or why Ice Bear is the best bear... 🧤"
+                    required
+                    aria-describedby="message-error"
+                    aria-invalid="false"></textarea>
+          <span class="form-error" id="message-error" role="alert">Please enter your message.</span>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;font-size:1.05rem;" id="contact-submit">
+          Send Message 📨
+        </button>
+      </form>
+
+      <!-- Success message -->
+      <div id="form-success" role="alert">
+        🎉 Message sent! Grizzly did a happy dance, Panda blushed, and Ice Bear said "Ice Bear is pleased." We'll get back to you soon! 🐾
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="faq-section" id="faq">
+  <div class="section-header reveal">
+    <span class="section-tag">FAQ</span>
+    <h2 class="section-title">Frequently Asked Questions 🐻</h2>
+    <p class="section-subtitle" style="margin: 0 auto 40px;">Everything you wanted to know but were too shy to ask (unlike Grizz).</p>
+  </div>
+
+  <div class="faq-list" role="list">
+
+    <div class="faq-item reveal" role="listitem">
+      <button class="faq-q" aria-expanded="false" id="faq-q1">
+        Is this an official Cartoon Network website?
+        <span class="arrow" aria-hidden="true">▼</span>
+      </button>
+      <div class="faq-a" id="faq-a1">
+        No! This is a fan-made tribute website created with love for the We Bare Bears community.
+        We Bare Bears is © Cartoon Network / Warner Bros. Discovery. All characters and show elements belong to their respective owners.
+      </div>
+    </div>
+
+    <div class="faq-item reveal" role="listitem">
+      <button class="faq-q" aria-expanded="false" id="faq-q2">
+        Can I submit my fan art to be featured?
+        <span class="arrow" aria-hidden="true">▼</span>
+      </button>
+      <div class="faq-a" id="faq-a2">
+        Absolutely! Use the contact form above and select "🎨 Fan Art Submission" as your subject.
+        Attach your artwork and we'll review it for the fan gallery. Ice Bear will personally approve each submission.
+      </div>
+    </div>
+
+    <div class="faq-item reveal" role="listitem">
+      <button class="faq-q" aria-expanded="false" id="faq-q3">
+        Are the shop products real and available to buy?
+        <span class="arrow" aria-hidden="true">▼</span>
+      </button>
+      <div class="faq-a" id="faq-a3">
+        The shop is a demo for this fan website — products shown are concept designs only and are not currently available for purchase.
+        For real We Bare Bears merchandise, check the official Cartoon Network store!
+      </div>
+    </div>
+
+    <div class="faq-item reveal" role="listitem">
+      <button class="faq-q" aria-expanded="false" id="faq-q4">
+        Where can I watch We Bare Bears episodes?
+        <span class="arrow" aria-hidden="true">▼</span>
+      </button>
+      <div class="faq-a" id="faq-a4">
+        We Bare Bears is available on HBO Max, Cartoon Network's official app, and various streaming platforms depending on your region.
+        Check our <a href="series.html" style="color:var(--accent);font-weight:700;">Series page</a> for more details and the official trailer!
+      </div>
+    </div>
+
+    <div class="faq-item reveal" role="listitem">
+      <button class="faq-q" aria-expanded="false" id="faq-q5">
+        Which bear is the best? 🐻
+        <span class="arrow" aria-hidden="true">▼</span>
+      </button>
+      <div class="faq-a" id="faq-a5">
+        Ice Bear already answered this. Ice Bear is best bear. Ice Bear will not be taking further questions on the matter. 🧊
+      </div>
+    </div>
+
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">We Bare Bears 🐾</div>
+  <nav class="footer-links" aria-label="Footer navigation">
+    <a href="index.html">Home</a>
+    <a href="series.html">Series</a>
+    <a href="characters.html">Characters</a>
+    <a href="shop.html">Shop</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <p>© 2024 We Bare Bears Fan Hub — A fan-made tribute. We Bare Bears is © Cartoon Network / Warner Bros.</p>
+</footer>
+
+<div id="cart-overlay" aria-hidden="true"></div>
+<aside id="cart-drawer" role="complementary" aria-label="Shopping cart">
+  <div class="cart-header">🛒 Your Cart<button id="cart-close" aria-label="Close cart">✕</button></div>
+  <div id="cart-items"></div>
+  <div class="cart-footer">
+    <div class="cart-subtotal"><span>Subtotal</span><span id="cart-subtotal-val">$0.00</span></div>
+    <button class="btn btn-primary" style="width:100%;" id="checkout-btn">Checkout 🐾</button>
+  </div>
+</aside>
+<div id="checkout-modal" role="dialog" aria-modal="true">
+  <div class="checkout-box">
+    <div style="font-size:3rem;">🎉</div>
+    <h2>Order Placed!</h2>
+    <p>Thank you! The bears are packing your items right now. 📦🐻</p>
+    <button class="btn btn-primary" id="checkout-modal-close">Awesome! 🐾</button>
+  </div>
+</div>
+<div id="lightbox" role="dialog" aria-modal="true"><button id="lightbox-close" aria-label="Close">✕</button><img id="lightbox-img" src="" alt="Frame"/></div>
+
+<script src="script.js"></script>
+<script>
+  /* ── FAQ Accordion ── */
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      // close all
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+      });
+      // open clicked
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+</script>
+</body>
+</html>

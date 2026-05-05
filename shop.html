@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop | We Bare Bears Fan Hub 🐾</title>
+  <meta name="description" content="Shop We Bare Bears merchandise — stickers, T-shirts, diaries, tote bags, mugs and more!" />
+  <meta property="og:title" content="Shop — We Bare Bears Fan Hub" />
+  <meta property="og:description" content="Shop We Bare Bears merchandise — stickers, T-shirts, diaries, tote bags, mugs and more!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="Asset/Frame/ezgif-frame-001.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#ff8c69" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>" />
+  <style>
+    .shop-hero {
+      background: linear-gradient(135deg, var(--accent) 0%, #FF6B35 50%, var(--brown) 100%);
+      padding: 130px 40px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .shop-hero h1 { font-size: clamp(2.5rem,6vw,4rem); color: #fff; margin-bottom: 12px; }
+    .shop-hero p  { font-size: 1.05rem; color: rgba(255,255,255,0.88); max-width: 520px; margin: 0 auto; line-height: 1.7; }
+  </style>
+</head>
+<body>
+
+<!-- Page Loader -->
+<div class="page-loader" id="page-loader" aria-hidden="true">
+  <div class="loader-inner">
+    <div class="loader-paw">🐾</div>
+    <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+    <p class="loader-text">Loading Shop...</p>
+  </div>
+</div>
+
+<div class="bubbles-bg" aria-hidden="true"></div>
+
+<!-- NAVBAR -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">
+    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="40" cy="48" r="24" fill="#8B5E3C"/>
+      <circle cx="22" cy="26" r="11" fill="#8B5E3C"/>
+      <circle cx="58" cy="26" r="11" fill="#8B5E3C"/>
+      <ellipse cx="30" cy="52" rx="6" ry="7" fill="#FFF8F0"/>
+      <ellipse cx="40" cy="56" rx="6" ry="7" fill="#FFF8F0"/>
+      <ellipse cx="50" cy="52" rx="6" ry="7" fill="#FFF8F0"/>
+    </svg>
+    We Bare Bears 🐾
+  </a>
+  <ul class="nav-links" role="list">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="series.html">Cartoon Series</a></li>
+    <li><a href="characters.html">Characters</a></li>
+    <li><a href="shop.html">Shop</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button id="cart-btn" aria-label="Open cart">🛒 Cart <span class="cart-badge">0</span></button>
+    <button id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div id="mobile-nav" role="navigation" aria-label="Mobile navigation">
+  <a href="index.html">🏠 Home</a>
+  <a href="series.html">🎬 Cartoon Series</a>
+  <a href="characters.html">🐻 Characters</a>
+  <a href="shop.html">🛍️ Shop</a>
+  <a href="contact.html">📬 Contact</a>
+</div>
+
+<main>
+<!-- SHOP HERO -->
+<section class="shop-hero">
+  <img class="watermark-frame" style="width:320px;top:0;left:-60px;transform:rotate(-10deg);" alt="" aria-hidden="true"/>
+  <img class="watermark-frame" style="width:280px;bottom:-30px;right:-40px;transform:rotate(12deg);" alt="" aria-hidden="true"/>
+  <h1>🛍️ Bear Merch Shop</h1>
+  <p>Pick up official We Bare Bears swag — stickers, tees, diaries, accessories and more. Ice Bear approves every item. 🧊</p>
+</section>
+
+<!-- FILTER BAR -->
+<div class="shop-filter" role="group" aria-label="Product category filter">
+  <button class="filter-btn active" data-filter="all" id="filter-all">All</button>
+  <button class="filter-btn" data-filter="stickers" id="filter-stickers">🌟 Stickers</button>
+  <button class="filter-btn" data-filter="tshirts" id="filter-tshirts">👕 T-Shirts</button>
+  <button class="filter-btn" data-filter="diaries" id="filter-diaries">📓 Diaries</button>
+  <button class="filter-btn" data-filter="accessories" id="filter-accessories">🎒 Accessories</button>
+</div>
+
+<!-- PRODUCTS GRID -->
+<section class="products-section" id="shop">
+  <img class="watermark-frame" style="width:380px;top:40px;right:-80px;transform:rotate(8deg);" alt="" aria-hidden="true"/>
+  <img class="watermark-frame" style="width:300px;bottom:80px;left:-60px;transform:rotate(-6deg);" alt="" aria-hidden="true"/>
+
+  <div class="products-grid">
+
+    <!-- 1. Sticker Pack -->
+    <article class="product-card reveal" data-category="stickers" id="product-sticker-pack">
+      <div class="product-img-wrap">
+        <img class="product-frame-img" src="" alt="Sticker Pack background" loading="lazy"/>
+        <div class="product-img-overlay">🌟</div>
+      </div>
+      <div class="product-body">
+        <p class="product-category">Stickers</p>
+        <h2 class="product-name">Bear Stack Sticker Pack</h2>
+        <p class="product-price">$4.99</p>
+        <button class="add-to-cart-btn" id="atc-sticker-pack"
+          data-name="Bear Stack Sticker Pack"
+          data-price="4.99"
+          data-img="Asset/Frame/ezgif-frame-001.jpg">
+          🛒 Add to Cart
+        </button>
+      </div>
+    </article>
+
+    <!-- 2. Holographic Sticker -->
+    <article class="product-card reveal" data-category="stickers" id="product-holo-sticker">
+      <div class="product-img-wrap">
+        <img class="product-frame-img" src="" alt="Holographic Sticker background" loading="lazy"/>
+        <div class="product-img-overlay">✨</div>
+      </div>
+      <div class="product-body">
+        <p class="product-category">Stickers</p>
+        <h2 class="product-name">Holographic Sticker Set</h2>
+        <p class="product-price">$3.99</p>
+        <button class="add-to-cart-btn" id="atc-holo-sticker"
+          data-name="Holographic Sticker Set"
+          data-price="3.99"
+          data-img="Asset/Frame/ezgif-frame-006.jpg">
+          🛒 Add to Cart
+        </button>
+      </div>
+    </article>
+
+    <!-- 3. Enamel Pin -->
+    <article class="product-card reveal" data-category="accessories" id="product-enamel-pin">
+      <div class="product-img-wrap">
+        <img class="product-frame-img" src="" alt="Enamel Pin Set background" loading="lazy"/>
+        <div class="product-img-overlay">📌</div>
+      </div>
+      <div class="product-body">
+        <p class="product-category">Accessories</p>
+        <h2 class="product-name">Bear Enamel Pin Set</h2>
+        <p class="product-price">$7.99</p>
+        <button class="add-to-cart-btn" id="atc-enamel-pin"
+          data-name="Bear Enamel Pin Set"
+          data-price="7.99"
+          data-img="Asset/Frame/ezgif-frame-011.jpg">
+          🛒 Add to Cart
+        </button>
+      </div>
+    </article>
+
+    <!-- 4. Stack T-Shirt -->
+    <article class="product-card reveal" data-category="tshirts" id="product-stack-tee">
+      <div class="product-img-wrap">
+        <img class="product-frame-img" src="" alt="Stack T-Shirt background" loading="lazy"/>
+        <div class="product-img-overlay">👕</div>
+      </div>
+      <div class="product-body">
+        <p class="product-category">T-Shirts</p>
+        <h2 class="product-name">Bear Stack T-Shirt</h2>
+        <p class="product-price">$19.99</p>
+        <button class="add-to-cart-btn" id="atc-stack-tee"
+          data-name="Bear Stack T-Shirt"
+          data-price="19.99"
+          data-img="Asset/Frame/ezgif-frame-016.jpg">
+          🛒 Add to Cart
+        </button>
+      </div>
+    </article>
+
+    <!-- 5. Ice Bear Tee -->
+    <article class="product-card reveal" data-category="tshirts" id="product-icebear-tee">
+      <div class="product-img-wrap">
+        <img class="product-frame-img" src="" alt="Ice Bear Tee background" loading="lazy"/>
+        <div class="product-img-overlay">🧊</div>
+      </div>
+      <div class="product-body">
+        <p class="product-category">T-Shirts</p>
+        <h2 class="product-name">Ice Bear Tee</h2>
+        <p class="product-price">$18.99</p>
+        <button class="add-to-cart-btn" id="atc-icebear-tee"
+          data-name="Ice Bear Tee"
+          data-price="18.99"
+          data-img="Asset/Frame/ezgif-frame-021.jpg">
+          🛒 Add to Cart
+        </button>
+      </div>
+    </article>
+
+    <!-- 6. Panda Tee -->
+    <article class="product-card reveal" data-category="tshirts" id="product-panda-tee">
+      <div class="product-img-wrap">
+        <img class="product-frame-img" src="" alt="Panda Tee background" loading="lazy"/>
+        <div class="product-img-overlay">🐼</div>
+      </div>
+      <div class="product-body">
+        <p class="product-category">T-Shirts</p>
+        <h2 class="product-name">Panda Tee</h2>
+        <p class="product-price">$17.99</p>
+        <button class="add-to-cart-btn" id="atc-panda-tee"
+          data-name="Panda Tee"
+          data-price="17.99"
+          data-img="Asset/Frame/ezgif-frame-026.jpg">
+          🛒 Add to Cart
+        </button>
+      </div>
+    </article>
+
+    <!-- 7. Hardcover Diary -->
+    <article class="product-card reveal" data-category="diaries" id="product-diary">
+      <div class="product-img-wrap">
+        <img class="product-frame-img" src="" alt="Hardcover Diary background" loading="lazy"/>
+        <div class="product-img-overlay">📖</div>
+      </div>
+      <div class="product-body">
+        <p class="product-category">Diaries</p>
+        <h2 class="product-name">Bear Hardcover Diary</h2>
+        <p class="product-price">$12.99</p>
+        <button class="add-to-cart-btn" id="atc-diary"
+          data-name="Bear Hardcover Diary"
+          data-price="12.99"
+          data-img="Asset/Frame/ezgif-frame-031.jpg">
+          🛒 Add to Cart
+        </button>
+      </div>
+    </article>
+
+    <!-- 8. Spiral Notebook -->
+    <article class="product-card reveal" data-category="diaries" id="product-notebook">
+      <div class="product-img-wrap">
+        <img class="product-frame-img" src="" alt="Spiral Notebook background" loading="lazy"/>
+        <div class="product-img-overlay">📓</div>
+      </div>
+      <div class="product-body">
+        <p class="product-category">Diaries</p>
+        <h2 class="product-name">Bear Spiral Notebook</h2>
+        <p class="product-price">$9.99</p>
+        <button class="add-to-cart-btn" id="atc-notebook"
+          data-name="Bear Spiral Notebook"
+          data-price="9.99"
+          data-img="Asset/Frame/ezgif-frame-036.jpg">
+          🛒 Add to Cart
+        </button>
+      </div>
+    </article>
+
+    <!-- 9. Tote Bag -->
+    <article class="product-card reveal" data-category="accessories" id="product-tote">
+      <div class="product-img-wrap">
+        <img class="product-frame-img" src="" alt="Tote Bag background" loading="lazy"/>
+        <div class="product-img-overlay">🎒</div>
+      </div>
+      <div class="product-body">
+        <p class="product-category">Accessories</p>
+        <h2 class="product-name">Bear Tote Bag</h2>
+        <p class="product-price">$14.99</p>
+        <button class="add-to-cart-btn" id="atc-tote"
+          data-name="Bear Tote Bag"
+          data-price="14.99"
+          data-img="Asset/Frame/ezgif-frame-041.jpg">
+          🛒 Add to Cart
+        </button>
+      </div>
+    </article>
+
+    <!-- 10. Enamel Mug -->
+    <article class="product-card reveal" data-category="accessories" id="product-mug">
+      <div class="product-img-wrap">
+        <img class="product-frame-img" src="" alt="Enamel Mug background" loading="lazy"/>
+        <div class="product-img-overlay">☕</div>
+      </div>
+      <div class="product-body">
+        <p class="product-category">Accessories</p>
+        <h2 class="product-name">Bear Enamel Mug</h2>
+        <p class="product-price">$11.99</p>
+        <button class="add-to-cart-btn" id="atc-mug"
+          data-name="Bear Enamel Mug"
+          data-price="11.99"
+          data-img="Asset/Frame/ezgif-frame-046.jpg">
+          🛒 Add to Cart
+        </button>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- =============================================
+     WISHLIST MANAGER (CRUD)
+     ============================================= -->
+<section class="wishlist-section" id="wishlist" aria-labelledby="wishlist-heading">
+  <div class="section-header reveal">
+    <span class="section-tag">✨ My Wishlist</span>
+    <h2 class="section-title" id="wishlist-heading">Bear Wishlist Manager 🐾</h2>
+    <p class="section-subtitle">Save the items you want most — create, edit, search and manage your personal wishlist.</p>
+  </div>
+
+  <!-- ADD FORM -->
+  <div class="wishlist-form-wrap reveal">
+    <form class="wishlist-form" id="wishlist-form" novalidate aria-label="Add wishlist item">
+      <div class="form-group">
+        <label for="wishlist-name">Item Name <span aria-hidden="true">*</span></label>
+        <input type="text" id="wishlist-name" name="wishlist-name"
+               placeholder="e.g. Grizz Plushie 🐻"
+               required
+               aria-required="true"
+               aria-describedby="wishlist-name-error"
+               aria-invalid="false" />
+        <span class="form-error" id="wishlist-name-error" role="alert">Please enter an item name.</span>
+      </div>
+      <div class="form-group">
+        <label for="wishlist-category">Category</label>
+        <select id="wishlist-category" name="wishlist-category">
+          <option value="stickers">🌟 Stickers</option>
+          <option value="tshirts">👕 T-Shirts</option>
+          <option value="diaries">📓 Diaries</option>
+          <option value="accessories">🎒 Accessories</option>
+          <option value="other">🐻 Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="wishlist-qty">Quantity</label>
+        <input type="number" id="wishlist-qty" name="wishlist-qty"
+               value="1" min="1" max="99" />
+      </div>
+      <div class="form-group">
+        <label for="wishlist-note">Personal Note <span style="font-weight:400;color:#999;">(optional)</span></label>
+        <input type="text" id="wishlist-note" name="wishlist-note"
+               placeholder="e.g. Birthday gift idea 🎉" />
+      </div>
+      <button type="submit" class="btn btn-primary" id="wishlist-submit">➕ Add to Wishlist</button>
+    </form>
+  </div>
+
+  <!-- TOOLBAR -->
+  <div class="wishlist-toolbar">
+    <input type="search" id="wishlist-search" placeholder="🔍 Search wishlist..." aria-label="Search wishlist items" />
+    <select id="wishlist-filter" aria-label="Filter by category">
+      <option value="all">All Categories</option>
+      <option value="stickers">🌟 Stickers</option>
+      <option value="tshirts">👕 T-Shirts</option>
+      <option value="diaries">📓 Diaries</option>
+      <option value="accessories">🎒 Accessories</option>
+      <option value="other">🐻 Other</option>
+    </select>
+    <button class="btn btn-outline" id="wishlist-clear-all" aria-label="Clear entire wishlist">🗑 Clear All</button>
+  </div>
+
+  <!-- STATS BAR -->
+  <p class="wishlist-stats" id="wishlist-stats" aria-live="polite"></p>
+
+  <!-- GRID -->
+  <div class="wishlist-grid" id="wishlist-grid" role="list" aria-label="Wishlist items"></div>
+
+  <!-- EDIT MODAL -->
+  <div class="wishlist-modal-overlay" id="wishlist-modal" hidden
+       role="dialog" aria-modal="true" aria-labelledby="wishlist-modal-heading">
+    <div class="wishlist-modal-box">
+      <h3 class="wishlist-modal-title" id="wishlist-modal-heading">✏️ Edit Wishlist Item</h3>
+      <form id="wishlist-edit-form" novalidate aria-label="Edit wishlist item">
+        <input type="hidden" id="edit-id" />
+        <div class="form-group">
+          <label for="edit-name">Item Name <span aria-hidden="true">*</span></label>
+          <input type="text" id="edit-name" required
+                 aria-required="true"
+                 aria-describedby="edit-name-error"
+                 aria-invalid="false" />
+          <span class="form-error" id="edit-name-error" role="alert">Name cannot be empty.</span>
+        </div>
+        <div class="form-group">
+          <label for="edit-category">Category</label>
+          <select id="edit-category">
+            <option value="stickers">🌟 Stickers</option>
+            <option value="tshirts">👕 T-Shirts</option>
+            <option value="diaries">📓 Diaries</option>
+            <option value="accessories">🎒 Accessories</option>
+            <option value="other">🐻 Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="edit-qty">Quantity</label>
+          <input type="number" id="edit-qty" min="1" max="99" />
+        </div>
+        <div class="form-group">
+          <label for="edit-note">Note</label>
+          <input type="text" id="edit-note" placeholder="Optional note..." />
+        </div>
+        <div class="wishlist-modal-actions">
+          <button type="submit" class="btn btn-primary" id="wishlist-modal-save">✓ Save Changes</button>
+          <button type="button" class="btn btn-outline" id="wishlist-modal-cancel">✕ Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">We Bare Bears 🐾</div>
+  <nav class="footer-links" aria-label="Footer navigation">
+    <a href="index.html">Home</a>
+    <a href="series.html">Series</a>
+    <a href="characters.html">Characters</a>
+    <a href="shop.html">Shop</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <p>© 2024 We Bare Bears Fan Hub — A fan-made tribute. We Bare Bears is © Cartoon Network / Warner Bros.</p>
+</footer>
+
+<div id="cart-overlay" aria-hidden="true"></div>
+<aside id="cart-drawer" role="complementary" aria-label="Shopping cart">
+  <div class="cart-header">🛒 Your Cart<button id="cart-close" aria-label="Close cart">✕</button></div>
+  <div id="cart-items"></div>
+  <div class="cart-footer">
+    <div class="cart-subtotal"><span>Subtotal</span><span id="cart-subtotal-val">$0.00</span></div>
+    <button class="btn btn-primary" style="width:100%;" id="checkout-btn">Checkout 🐾</button>
+  </div>
+</aside>
+<div id="checkout-modal" role="dialog" aria-modal="true">
+  <div class="checkout-box">
+    <div style="font-size:3rem;">🎉</div>
+    <h2>Order Placed!</h2>
+    <p>Thank you! The bears are packing your items right now. 📦🐻</p>
+    <button class="btn btn-primary" id="checkout-modal-close">Awesome! 🐾</button>
+  </div>
+</div>
+<div id="lightbox" role="dialog" aria-modal="true"><button id="lightbox-close" aria-label="Close">✕</button><img id="lightbox-img" src="" alt="Frame"/></div>
+
+<script src="script.js"></script>
+</body>
+</html>

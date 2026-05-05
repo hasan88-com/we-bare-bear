@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>We Bare Bears Fan Hub 🐾 | Home</title>
+  <meta name="description" content="Your ultimate fan hub for We Bare Bears — Grizzly, Panda & Ice Bear. Explore the series, shop merchandise, and meet the characters!" />
+  <meta property="og:title" content="We Bare Bears Fan Hub — Home" />
+  <meta property="og:description" content="Your fan hub for Grizzly, Panda &amp; Ice Bear. Explore episodes, shop merch, meet the characters!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="Asset/Frame/ezgif-frame-001.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#ff8c69" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Favicon paw emoji -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>" />
+</head>
+<body>
+
+<!-- Page Loader -->
+<div class="page-loader" id="page-loader" aria-hidden="true">
+  <div class="loader-inner">
+    <div class="loader-paw">🐾</div>
+    <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+    <p class="loader-text">Loading...</p>
+  </div>
+</div>
+
+<!-- ── Floating Bubbles ── -->
+<div class="bubbles-bg" aria-hidden="true"></div>
+
+<!-- =============================================
+     NAVBAR
+     ============================================= -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo" id="logo-link">
+    <!-- Bear paw SVG -->
+    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="40" cy="48" r="24" fill="#8B5E3C"/>
+      <circle cx="22" cy="26" r="11" fill="#8B5E3C"/>
+      <circle cx="58" cy="26" r="11" fill="#8B5E3C"/>
+      <ellipse cx="30" cy="52" rx="6" ry="7" fill="#FFF8F0"/>
+      <ellipse cx="40" cy="56" rx="6" ry="7" fill="#FFF8F0"/>
+      <ellipse cx="50" cy="52" rx="6" ry="7" fill="#FFF8F0"/>
+    </svg>
+    We Bare Bears 🐾
+  </a>
+
+  <ul class="nav-links" role="list">
+    <li><a href="index.html" id="nav-home">Home</a></li>
+    <li><a href="series.html" id="nav-series">Cartoon Series</a></li>
+    <li><a href="characters.html" id="nav-characters">Characters</a></li>
+    <li><a href="shop.html" id="nav-shop">Shop</a></li>
+    <li><a href="contact.html" id="nav-contact">Contact</a></li>
+  </ul>
+
+  <div class="nav-right">
+    <button id="cart-btn" aria-label="Open cart">
+      🛒 Cart <span class="cart-badge">0</span>
+    </button>
+    <button id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div id="mobile-nav" role="navigation" aria-label="Mobile navigation">
+  <a href="index.html">🏠 Home</a>
+  <a href="series.html">🎬 Cartoon Series</a>
+  <a href="characters.html">🐻 Characters</a>
+  <a href="shop.html">🛍️ Shop</a>
+  <a href="contact.html">📬 Contact</a>
+</div>
+
+<!-- =============================================
+     HERO SECTION
+     ============================================= -->
+<main>
+<section class="hero" id="hero">
+  <!-- Gradient blobs -->
+  <div class="hero-blob hero-blob-1" aria-hidden="true"></div>
+  <div class="hero-blob hero-blob-2" aria-hidden="true"></div>
+  <div class="hero-blob hero-blob-3" aria-hidden="true"></div>
+
+  <!-- Background watermark frames -->
+  <img class="watermark-frame" style="width:340px;top:8%;right:-60px;transform:rotate(12deg);" alt="" aria-hidden="true" />
+  <img class="watermark-frame" style="width:280px;bottom:5%;left:-40px;transform:rotate(-8deg);" alt="" aria-hidden="true" />
+
+  <div class="hero-grid">
+    <!-- Left: text content -->
+    <div class="hero-text-col">
+      <span class="hero-badge">✦ Fan-Made Tribute Site</span>
+      <h1 class="hero-title">Welcome to We Bare Bears World 🐾</h1>
+      <p class="hero-subtitle">Your fan hub for everything Grizzly, Panda &amp; Ice Bear — where bears stack up and adventures never stop!</p>
+      <div class="hero-btns">
+        <a href="series.html" class="btn btn-primary" id="cta-series">🎬 Explore Series</a>
+        <a href="shop.html" class="btn btn-secondary" id="cta-shop">🛍️ Visit Shop</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><span class="hero-stat-num">4</span><span class="hero-stat-lbl">Seasons</span></div>
+        <div class="hero-stat"><span class="hero-stat-num">140+</span><span class="hero-stat-lbl">Episodes</span></div>
+        <div class="hero-stat"><span class="hero-stat-num">3</span><span class="hero-stat-lbl">Bear Brothers</span></div>
+        <div class="hero-stat"><span class="hero-stat-num">2015</span><span class="hero-stat-lbl">Premiere</span></div>
+      </div>
+    </div>
+
+    <!-- Right: flipbook -->
+    <div class="hero-flipbook-col">
+      <div class="flipbook-wrapper" role="img" aria-label="Animated cartoon flipbook">
+        <div class="film-dots left" aria-hidden="true">
+          <div class="film-dot"></div><div class="film-dot"></div><div class="film-dot"></div>
+          <div class="film-dot"></div><div class="film-dot"></div><div class="film-dot"></div>
+        </div>
+        <img id="flipbook-img" src="Asset/Frame/ezgif-frame-001.jpg" alt="We Bare Bears cartoon frame" />
+        <div class="flipbook-overlay"></div>
+        <div class="film-dots right" aria-hidden="true">
+          <div class="film-dot"></div><div class="film-dot"></div><div class="film-dot"></div>
+          <div class="film-dot"></div><div class="film-dot"></div><div class="film-dot"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     HUB / PROJECT DESCRIPTION SECTION (Task 4.3)
+     ============================================= -->
+<section class="hub-section" id="hub" aria-labelledby="hub-heading">
+  <div class="section-header reveal">
+    <span class="section-tag">🐾 What's Inside</span>
+    <h2 class="section-title" id="hub-heading">Everything in the Fan Hub ✨</h2>
+    <p class="section-subtitle">First time here? Here's what you can explore across the whole site.</p>
+  </div>
+
+  <div class="hub-grid">
+    <a href="series.html" class="hub-card reveal" id="hub-series">
+      <span class="hub-icon">🎬</span>
+      <div class="hub-card-title">Cartoon Series</div>
+      <p class="hub-card-desc">Explore the official trailer, browse 96 hand-picked scene frames in the film reel, and relive iconic episodes from all 4 seasons.</p>
+      <span class="hub-arrow">→</span>
+    </a>
+    <a href="characters.html" class="hub-card reveal" id="hub-characters">
+      <span class="hub-icon">🐻</span>
+      <div class="hub-card-title">Characters</div>
+      <p class="hub-card-desc">Meet Grizzly, Panda and Ice Bear — check their personality stats, iconic quotes, and find out which bear matches your vibe.</p>
+      <span class="hub-arrow">→</span>
+    </a>
+    <a href="shop.html" class="hub-card reveal" id="hub-shop">
+      <span class="hub-icon">🛍️</span>
+      <div class="hub-card-title">Shop & Wishlist</div>
+      <p class="hub-card-desc">Browse fan merch concepts — stickers, tees, mugs and more. Build your personal wishlist with full CRUD management.</p>
+      <span class="hub-arrow">→</span>
+    </a>
+    <a href="contact.html" class="hub-card reveal" id="hub-contact">
+      <span class="hub-icon">📬</span>
+      <div class="hub-card-title">Contact</div>
+      <p class="hub-card-desc">Got fan art, questions, or just want to say hi? Drop us a message — Ice Bear personally reviews every submission. 🧊</p>
+      <span class="hub-arrow">→</span>
+    </a>
+  </div>
+
+  <div class="tech-strip" aria-label="Technologies used">
+    <span class="tech-badge">HTML5</span>
+    <span class="tech-badge">CSS3</span>
+    <span class="tech-badge">Vanilla JS</span>
+    <span class="tech-badge">localStorage</span>
+    <span class="tech-badge">IntersectionObserver</span>
+    <span class="tech-badge">CSS Grid</span>
+    <span class="tech-badge">Web Animations</span>
+  </div>
+</section>
+
+<!-- =============================================
+     ABOUT SECTION
+     ============================================= -->
+<section class="about-section" id="about">
+  <img class="watermark-frame" style="width:400px;top:-30px;left:50%;transform:translateX(-50%) rotate(5deg);" alt="" aria-hidden="true" />
+
+  <div class="about-inner">
+    <!-- Left: text -->
+    <div class="about-text reveal">
+      <span class="section-tag">About the Show</span>
+      <h2 class="section-title">Three Bears. One Stack. Infinite Fun! 🐻</h2>
+      <p class="section-subtitle">
+        We Bare Bears is an American animated television series created by Daniel Chong
+        for Cartoon Network. It follows three bear brothers — <strong>Grizzly, Panda, and Ice Bear</strong> —
+        as they attempt to integrate into human society in the San Francisco Bay Area with
+        humor, heart, and a whole lot of snacks.
+      </p>
+      <div class="fact-badges">
+        <span class="fact-badge">📅 2015–2019</span>
+        <span class="fact-badge">🎬 Cartoon Network</span>
+        <span class="fact-badge">🏆 Emmy Nominated</span>
+        <span class="fact-badge">🐻 4 Seasons</span>
+        <span class="fact-badge">🌎 140+ Episodes</span>
+      </div>
+      <br/>
+      <a href="series.html" class="btn btn-outline" style="margin-top:16px;" id="about-cta">Watch Episodes →</a>
+    </div>
+
+    <!-- Right: polaroid grid -->
+    <div id="polaroid-grid" class="polaroid-grid" aria-label="Cartoon scene gallery"></div>
+  </div>
+</section>
+
+<!-- =============================================
+     FEATURE CARDS SECTION
+     ============================================= -->
+<section class="features-section" id="features">
+  <div class="section-header reveal">
+    <span class="section-tag">Why We Love It</span>
+    <h2 class="section-title">What Makes We Bare Bears Special ✨</h2>
+  </div>
+
+  <div class="features-grid">
+    <div class="feature-card reveal">
+      <span class="icon">💛</span>
+      <h3>Heartwarming Stories</h3>
+      <p>Every episode is packed with genuine emotion, brotherly love, and life lessons that resonate with audiences of all ages.</p>
+    </div>
+    <div class="feature-card reveal">
+      <span class="icon">😂</span>
+      <h3>Hilarious Characters</h3>
+      <p>From Grizz's big dreams to Panda's crush disasters and Ice Bear's deadpan genius — the trio never fails to crack you up.</p>
+    </div>
+    <div class="feature-card reveal">
+      <span class="icon">🌈</span>
+      <h3>Feel-Good Vibes</h3>
+      <p>A cozy, colorful world with no villains — just life's everyday chaos, snacks, internet fame attempts, and bear hugs.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- =============================================
+     FOOTER
+     ============================================= -->
+<footer>
+  <div class="footer-logo">We Bare Bears 🐾</div>
+  <nav class="footer-links" aria-label="Footer navigation">
+    <a href="index.html">Home</a>
+    <a href="series.html">Series</a>
+    <a href="characters.html">Characters</a>
+    <a href="shop.html">Shop</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <p>© 2024 We Bare Bears Fan Hub — A fan-made tribute. We Bare Bears is © Cartoon Network / Warner Bros.</p>
+</footer>
+
+<!-- =============================================
+     CART DRAWER
+     ============================================= -->
+<div id="cart-overlay" aria-hidden="true"></div>
+<aside id="cart-drawer" role="complementary" aria-label="Shopping cart">
+  <div class="cart-header">
+    🛒 Your Cart
+    <button id="cart-close" aria-label="Close cart">✕</button>
+  </div>
+  <div id="cart-items"></div>
+  <div class="cart-footer">
+    <div class="cart-subtotal">
+      <span>Subtotal</span>
+      <span id="cart-subtotal-val">$0.00</span>
+    </div>
+    <button class="btn btn-primary" style="width:100%;" id="checkout-btn">Checkout 🐾</button>
+  </div>
+</aside>
+
+<!-- Checkout Modal -->
+<div id="checkout-modal" role="dialog" aria-modal="true" aria-label="Order confirmed">
+  <div class="checkout-box">
+    <div style="font-size:3rem;">🎉</div>
+    <h2>Order Placed!</h2>
+    <p>Thank you for your purchase! Grizzly, Panda &amp; Ice Bear are packing your items right now. 📦🐻</p>
+    <button class="btn btn-primary" id="checkout-modal-close">Awesome! 🐾</button>
+  </div>
+</div>
+
+<!-- Lightbox -->
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Frame viewer">
+  <button id="lightbox-close" aria-label="Close lightbox">✕</button>
+  <img id="lightbox-img" src="" alt="Full size frame" />
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

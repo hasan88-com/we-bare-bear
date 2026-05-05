@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Characters | We Bare Bears Fan Hub 🐾</title>
+  <meta name="description" content="Meet Grizzly, Panda, and Ice Bear — the three bear brothers at the heart of We Bare Bears." />
+  <meta property="og:title" content="Characters — We Bare Bears Fan Hub" />
+  <meta property="og:description" content="Meet Grizzly, Panda, and Ice Bear — the three bear brothers at the heart of We Bare Bears." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="Asset/Frame/ezgif-frame-001.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#ff8c69" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>" />
+  <style>
+    .characters-page-hero {
+      background: linear-gradient(135deg, var(--yellow) 0%, var(--primary) 60%, var(--accent) 100%);
+      padding: 130px 40px 70px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .characters-page-hero h1 { font-size: clamp(2.5rem,6vw,4rem); color: var(--brown); margin-bottom: 12px; }
+    .characters-page-hero p  { font-size: 1.05rem; color: var(--dark); max-width: 520px; margin: 0 auto; line-height: 1.7; }
+
+    /* Fun personality bar */
+    .stat-bar-wrap { margin-top: 14px; }
+    .stat-label { font-size: 0.8rem; font-weight: 700; color: var(--brown); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; display: flex; justify-content: space-between; }
+    .stat-bar { height: 10px; border-radius: 10px; border: 1.5px solid var(--brown); background: rgba(139,94,60,0.1); overflow: hidden; margin-bottom: 10px; }
+    .stat-fill { height: 100%; border-radius: 10px; transition: width 1.2s cubic-bezier(.4,0,.2,1); width: 0; }
+    .stat-fill.energy  { background: linear-gradient(90deg, #FF8C69, #FFB347); }
+    .stat-fill.charm   { background: linear-gradient(90deg, #A8D8EA, #64B5F6); }
+    .stat-fill.skill   { background: linear-gradient(90deg, #B2EBF2, #80DEEA); }
+
+    /* Bear facts strip */
+    .bears-facts {
+      background: var(--brown);
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 40px 60px;
+      flex-wrap: wrap;
+    }
+    .bears-facts .fact { text-align: center; color: var(--yellow); }
+    .bears-facts .fact-num { font-family: 'Bubblegum Sans'; font-size: 2.4rem; }
+    .bears-facts .fact-lbl { font-size: 0.85rem; font-weight: 700; color: rgba(255,229,158,0.7); letter-spacing: 1px; text-transform: uppercase; }
+  </style>
+</head>
+<body>
+
+<!-- Page Loader -->
+<div class="page-loader" id="page-loader" aria-hidden="true">
+  <div class="loader-inner">
+    <div class="loader-paw">🐾</div>
+    <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+    <p class="loader-text">Loading Characters...</p>
+  </div>
+</div>
+
+<div class="bubbles-bg" aria-hidden="true"></div>
+
+<!-- NAVBAR -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">
+    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="40" cy="48" r="24" fill="#8B5E3C"/>
+      <circle cx="22" cy="26" r="11" fill="#8B5E3C"/>
+      <circle cx="58" cy="26" r="11" fill="#8B5E3C"/>
+      <ellipse cx="30" cy="52" rx="6" ry="7" fill="#FFF8F0"/>
+      <ellipse cx="40" cy="56" rx="6" ry="7" fill="#FFF8F0"/>
+      <ellipse cx="50" cy="52" rx="6" ry="7" fill="#FFF8F0"/>
+    </svg>
+    We Bare Bears 🐾
+  </a>
+  <ul class="nav-links" role="list">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="series.html">Cartoon Series</a></li>
+    <li><a href="characters.html">Characters</a></li>
+    <li><a href="shop.html">Shop</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button id="cart-btn" aria-label="Open cart">🛒 Cart <span class="cart-badge">0</span></button>
+    <button id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div id="mobile-nav" role="navigation" aria-label="Mobile navigation">
+  <a href="index.html">🏠 Home</a>
+  <a href="series.html">🎬 Cartoon Series</a>
+  <a href="characters.html">🐻 Characters</a>
+  <a href="shop.html">🛍️ Shop</a>
+  <a href="contact.html">📬 Contact</a>
+</div>
+
+<!-- PAGE HERO -->
+<main>
+<section class="characters-page-hero">
+  <img class="watermark-frame" style="width:320px;top:0;left:-60px;transform:rotate(-10deg);" alt="" aria-hidden="true"/>
+  <img class="watermark-frame" style="width:280px;bottom:-20px;right:-40px;transform:rotate(8deg);" alt="" aria-hidden="true"/>
+  <h1>🐻 Meet the Bears</h1>
+  <p>Three brothers, one cave, infinite chaos — Grizzly, Panda and Ice Bear are unlike any bears you've ever met.</p>
+</section>
+
+<!-- BEAR FACTS STRIP -->
+<div class="bears-facts" aria-label="Fun facts">
+  <div class="fact"><div class="fact-num">4</div><div class="fact-lbl">Seasons</div></div>
+  <div class="fact"><div class="fact-num">140+</div><div class="fact-lbl">Episodes</div></div>
+  <div class="fact"><div class="fact-num">3</div><div class="fact-lbl">Bear Brothers</div></div>
+  <div class="fact"><div class="fact-num">2015</div><div class="fact-lbl">Premiered</div></div>
+</div>
+
+<!-- =============================================
+     CHARACTERS SECTION
+     ============================================= -->
+<section class="characters-section" id="characters">
+  <img class="watermark-frame" style="width:420px;top:80px;left:50%;transform:translateX(-50%);opacity:0.06;" alt="" aria-hidden="true"/>
+
+  <div class="section-header reveal">
+    <span class="section-tag">The Trio</span>
+    <h2 class="section-title">Grizzly, Panda & Ice Bear 🐾</h2>
+    <p class="section-subtitle">Each bear brings a unique flavor to the stack. Learn what makes each brother so special!</p>
+  </div>
+
+  <div class="characters-grid">
+    <!-- Grizzly -->
+    <article class="char-card reveal" id="char-grizzly">
+      <div class="char-bg">
+        <img src="" alt="Grizzly Bear scene" loading="lazy"/>
+        <div class="char-bg-gradient"></div>
+        <span class="char-emoji" aria-hidden="true">🐻</span>
+      </div>
+      <div class="char-body">
+        <h2 class="char-name">Grizzly</h2>
+        <p class="char-role">The Leader · Big Brother</p>
+        <blockquote class="char-quote">"I've got a plan. It's going to work. Trust the Grizz!"</blockquote>
+        <div class="char-tags">
+          <span class="char-tag">🎤 Charismatic</span>
+          <span class="char-tag">🍕 Foodie</span>
+          <span class="char-tag">📱 Social Media Fan</span>
+          <span class="char-tag">💡 Big Ideas</span>
+        </div>
+        <div class="stat-bar-wrap">
+          <div class="stat-label"><span>Energy</span><span>95%</span></div>
+          <div class="stat-bar"><div class="stat-fill energy" data-width="95"></div></div>
+          <div class="stat-label"><span>Charm</span><span>85%</span></div>
+          <div class="stat-bar"><div class="stat-fill charm" data-width="85"></div></div>
+          <div class="stat-label"><span>Leadership</span><span>90%</span></div>
+          <div class="stat-bar"><div class="stat-fill skill" data-width="90"></div></div>
+        </div>
+        <a href="shop.html" class="btn btn-secondary" style="margin-top:18px;width:100%;justify-content:center;" id="shop-grizz">🛍️ Shop Grizzly Items</a>
+      </div>
+    </article>
+
+    <!-- Panda -->
+    <article class="char-card reveal" id="char-panda" style="--shadow:4px 4px 0 #A8D8EA;">
+      <div class="char-bg">
+        <img src="" alt="Panda Bear scene" loading="lazy"/>
+        <div class="char-bg-gradient"></div>
+        <span class="char-emoji" aria-hidden="true">🐼</span>
+      </div>
+      <div class="char-body">
+        <h2 class="char-name">Panda</h2>
+        <p class="char-role">The Romantic · Middle Brother</p>
+        <blockquote class="char-quote" style="border-color:var(--primary);">"I'm not nervous. I'm just… very aware of my surroundings."</blockquote>
+        <div class="char-tags">
+          <span class="char-tag" style="background:var(--primary);">📸 Instagram Star</span>
+          <span class="char-tag" style="background:var(--primary);">💻 Tech Savvy</span>
+          <span class="char-tag" style="background:var(--primary);">🍜 Anime Fan</span>
+          <span class="char-tag" style="background:var(--primary);">💕 Hopeless Romantic</span>
+        </div>
+        <div class="stat-bar-wrap">
+          <div class="stat-label"><span>Energy</span><span>55%</span></div>
+          <div class="stat-bar"><div class="stat-fill energy" data-width="55"></div></div>
+          <div class="stat-label"><span>Charm</span><span>75%</span></div>
+          <div class="stat-bar"><div class="stat-fill charm" data-width="75"></div></div>
+          <div class="stat-label"><span>Sensitivity</span><span>98%</span></div>
+          <div class="stat-bar"><div class="stat-fill skill" data-width="98"></div></div>
+        </div>
+        <a href="shop.html" class="btn btn-primary" style="margin-top:18px;width:100%;justify-content:center;" id="shop-panda">🛍️ Shop Panda Items</a>
+      </div>
+    </article>
+
+    <!-- Ice Bear -->
+    <article class="char-card reveal" id="char-icebear">
+      <div class="char-bg">
+        <img src="" alt="Ice Bear scene" loading="lazy"/>
+        <div class="char-bg-gradient"></div>
+        <span class="char-emoji" aria-hidden="true">🐻‍❄️</span>
+      </div>
+      <div class="char-body">
+        <h2 class="char-name">Ice Bear</h2>
+        <p class="char-role">The Stoic · Youngest Brother</p>
+        <blockquote class="char-quote" style="border-color:var(--accent);">"Ice Bear is superior. Ice Bear will handle it."</blockquote>
+        <div class="char-tags">
+          <span class="char-tag" style="background:#B2EBF2;">🍳 Master Chef</span>
+          <span class="char-tag" style="background:#B2EBF2;">🥋 Martial Artist</span>
+          <span class="char-tag" style="background:#B2EBF2;">🔇 Man of Few Words</span>
+          <span class="char-tag" style="background:#B2EBF2;">🧊 Ice Enthusiast</span>
+        </div>
+        <div class="stat-bar-wrap">
+          <div class="stat-label"><span>Energy</span><span>65%</span></div>
+          <div class="stat-bar"><div class="stat-fill energy" data-width="65"></div></div>
+          <div class="stat-label"><span>Skill</span><span>100%</span></div>
+          <div class="stat-bar"><div class="stat-fill charm" data-width="100"></div></div>
+          <div class="stat-label"><span>Coolness</span><span>99%</span></div>
+          <div class="stat-bar"><div class="stat-fill skill" data-width="99"></div></div>
+        </div>
+        <a href="shop.html" class="btn btn-outline" style="margin-top:18px;width:100%;justify-content:center;" id="shop-icebear">🛍️ Shop Ice Bear Items</a>
+      </div>
+    </article>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">We Bare Bears 🐾</div>
+  <nav class="footer-links" aria-label="Footer navigation">
+    <a href="index.html">Home</a>
+    <a href="series.html">Series</a>
+    <a href="characters.html">Characters</a>
+    <a href="shop.html">Shop</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <p>© 2024 We Bare Bears Fan Hub — A fan-made tribute. We Bare Bears is © Cartoon Network / Warner Bros.</p>
+</footer>
+
+<div id="cart-overlay" aria-hidden="true"></div>
+<aside id="cart-drawer" role="complementary" aria-label="Shopping cart">
+  <div class="cart-header">🛒 Your Cart<button id="cart-close" aria-label="Close cart">✕</button></div>
+  <div id="cart-items"></div>
+  <div class="cart-footer">
+    <div class="cart-subtotal"><span>Subtotal</span><span id="cart-subtotal-val">$0.00</span></div>
+    <button class="btn btn-primary" style="width:100%;" id="checkout-btn">Checkout 🐾</button>
+  </div>
+</aside>
+<div id="checkout-modal" role="dialog" aria-modal="true">
+  <div class="checkout-box">
+    <div style="font-size:3rem;">🎉</div>
+    <h2>Order Placed!</h2>
+    <p>Thank you! The bears are packing your items right now. 📦🐻</p>
+    <button class="btn btn-primary" id="checkout-modal-close">Awesome! 🐾</button>
+  </div>
+</div>
+<div id="lightbox" role="dialog" aria-modal="true"><button id="lightbox-close" aria-label="Close">✕</button><img id="lightbox-img" src="" alt="Frame"/></div>
+
+<script src="script.js"></script>
+<script>
+  /* Animate stat bars on scroll */
+  document.addEventListener('DOMContentLoaded', () => {
+    const fills = document.querySelectorAll('.stat-fill');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.width = e.target.dataset.width + '%';
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    fills.forEach(f => obs.observe(f));
+  });
+</script>
+</body>
+</html>
